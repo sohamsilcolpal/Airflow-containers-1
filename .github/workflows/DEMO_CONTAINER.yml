@@ -23,6 +23,6 @@ jobs:
       with: 
         gcr_service_account: ${{ secrets.GCR_GCP_CREDENTIALS }}
         gcr_project: 'cp-gaa-dev-connecthealth'
-        gcr_repo: 'airflow/'
+        gcr_repo: 'appengine/'
         dockerfile_path: 'DEMO_CONTAINER/'
         gcr_image_name: 'DEMO_CONTAINER'
