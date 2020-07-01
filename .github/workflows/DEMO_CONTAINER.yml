@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'DEMO_CONTAINER/**'
+      - 'append_csvs_in_bucket/**'
 
 jobs:
   setup-build-publish-deploy:
@@ -24,5 +24,5 @@ jobs:
         gcr_service_account: ${{ secrets.GCR_GCP_CREDENTIALS }}
         gcr_project: 'cp-gaa-dev-connecthealth'
         gcr_repo: 'appengine/'
-        dockerfile_path: 'DEMO_CONTAINER/'
-        gcr_image_name: 'DEMO_CONTAINER'
+        dockerfile_path: 'append_csvs_in_bucket/'
+        gcr_image_name: 'append_csvs_in_bucket'
