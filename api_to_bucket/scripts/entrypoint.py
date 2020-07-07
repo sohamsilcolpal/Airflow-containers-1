@@ -90,7 +90,7 @@ elif args.output_filename.endswith('csv'):
 elif args.output_filename.endswith('json'):
     print('json')
     # df_out.to_csv(args.output_filename,index=False)
-    out_blob.upload_from_string(data=  json.dumps(jsondata),
+    out_blob.upload_from_string(data=json.dumps(jsondata),
                                 content_type='application/json')
 
 
