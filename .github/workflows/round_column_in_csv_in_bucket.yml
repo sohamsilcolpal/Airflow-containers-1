@@ -1,5 +1,5 @@
 
-name: Build and Publish bq_to_bucket to GCR
+name: Build and Publish round_column_in_csv_in_bucket to GCR
 
 on:
   push:
