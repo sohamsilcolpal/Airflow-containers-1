@@ -1,0 +1,28 @@
+
+name: Build and Publish bq_to_bucket to GCR
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'round_column_in_csv_in_bucket/**'
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@master
+
+
+    - name: Docker build and push
+      uses: colpal/actions-gcr-buildpush@master
+      with: 
+        gcr_service_account: ${{ secrets.GCR_GCP_CREDENTIALS }}
+        gcr_project: 'cp-gaa-dev-connecthealth'
+        gcr_repo: 'airflow/'
+        dockerfile_path: 'round_column_in_csv_in_bucket/'
+        gcr_image_name: 'round_column_in_csv_in_bucket'
