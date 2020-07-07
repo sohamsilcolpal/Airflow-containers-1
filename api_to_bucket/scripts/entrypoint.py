@@ -41,7 +41,7 @@ parser.add_argument("--input_access_secret_key", type=str, required=True,
 parser.add_argument("--output_bucket_name", type=str, required=True,
                     help="GCS Bucket to write to.")
 
-parser.add_argument("--output_path", type=str, required=True,
+    parser.add_argument("--output_path", type=str, required=True,
                     help="GCS folder in bucket to write file to.")
 
 parser.add_argument("--output_filename", type=str, required=True,
