@@ -73,11 +73,11 @@ def gcs_auth_client():
     Z2FhLWRldi1jb25uZWN0aGVhbHRoLmlhbS5nc2VydmljZWFjY291bnQuY29tIgp9\
     Cg=='
 
-    base64_bytes = gcs_base64.encode('ascii')
-    message_bytes = base64.b64decode(base64_bytes)
-    message = message_bytes.decode('ascii')
+    # base64_bytes = gcs_base64.encode('ascii')
+    # message_bytes = base64.b64decode(base64_bytes)
+    # message = message_bytes.decode('ascii')
 
-    gcs_sa = json.loads(message)
+    gcs_sa = json.loads(gcs_base64)
     
     with open('gcs-sa.json', 'w') as json_file:
         json.dump(gcs_sa, json_file)
