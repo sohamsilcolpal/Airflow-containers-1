@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'k8_pod-hello-world/**'
+      - 'k8-pod-hello-world/**'
 
 jobs:
   setup-build-publish-deploy:
@@ -24,5 +24,5 @@ jobs:
         gcr_service_account: ${{ secrets.GCR_GCP_CREDENTIALS }}
         gcr_project: 'cp-gaa-dev-connecthealth'
         gcr_repo: 'airflow/'
-        dockerfile_path: 'k8_pod-hello-world/'
-        gcr_image_name: 'k8_pod-hello-world'
+        dockerfile_path: 'k8-pod-hello-world/'
+        gcr_image_name: 'k8-pod-hello-world'
