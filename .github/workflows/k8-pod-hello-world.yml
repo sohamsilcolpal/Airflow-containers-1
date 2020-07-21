@@ -1,0 +1,28 @@
+
+name: Build and Publish k8_vault_test to GCR
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'k8_pod-hello-world/**'
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@master
+
+
+    - name: Docker build and push
+      uses: colpal/actions-gcr-buildpush@master
+      with:
+        gcr_service_account: ${{ secrets.GCR_GCP_CREDENTIALS }}
+        gcr_project: 'cp-gaa-dev-connecthealth'
+        gcr_repo: 'airflow/'
+        dockerfile_path: 'k8_pod-hello-world/'
+        gcr_image_name: 'k8_pod-hello-world'
